@@ -1,0 +1,21 @@
+<launch>
+    
+    <include file="$(find learning_launch)/launch/simple.launch"/>
+    <node pkg="turtlesim" type = "turtlesim_node" name="turtlesim_node">
+        <remap from="/turtle1/cmd_vel" to="/cmd_vel"/>
+    </node>
+</launch>
+<!-- 
+    remap 重映射　ｒｏｓ计算图资源的命名
+    roslaunch learning_launch turtlesim_remap.launch 
+    rostopic list
+    rostopic pub /cmd_vel geometry_msgs/Twist "linear:
+    x: 5.0
+    y: 0.0
+    z: 0.0
+    angular:
+    x: 0.0
+    y: 0.0
+    z: 2.0" 
+ -->
+ 

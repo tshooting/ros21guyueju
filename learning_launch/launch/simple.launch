@@ -1,0 +1,18 @@
+<launch>
+    <node pkg = "learning_topic" type = "person_subscriber" name="talker" output="screen"/>
+    <node pkg = "learning_topic" type = "person_publisher" name="listener" output="screen"/>
+    
+</launch>
+<!-- 
+    node:启动节点
+    pkg:节点所在的功能包名称
+    type:　节点的可执行文件名称
+    name:节点运行时的名称　【相当于我虽然写了一个cpp　里面我也确实初始化了一个节点
+    并且这个节点也有名字，但是现在我用name来代替我一开始写的节点的名字
+    这样我多几个ｎａｍｅ就多了几个节点但是只写了一份代码
+    】
+    output:　打印在哪里
+
+    roslaunch learning_launch simple.launch 
+    rostopic list
+-->

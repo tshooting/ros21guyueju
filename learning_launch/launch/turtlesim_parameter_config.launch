@@ -1,0 +1,33 @@
+<launch>
+    <param name = "/turtle_number" value = "2"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node">
+        <param name = "turtle_name1" value = "Tom"/>
+        <param name = "turtle_name2" value = "Jerry"/>
+        <rosparam 
+            file = "$(find learning_launch)/config/param.yaml"
+            command = "load"
+        />
+    </node>
+
+    <node 
+        pkg="turtlesim" 
+        type="turtle_teleop_key"
+        name = "turtle_teleop_key" 
+        output = "screen"
+    
+    />
+</launch>
+<!-- 
+    设置ｒｏｓ系统中运行的参数，存储在参数服务器中
+    
+    param:
+        name:
+        value:
+    加载参数文件中的多个参数
+    rosparam
+        file
+        command
+        ns="params"
+    roslaunch learning_launch turtlesim_parameter_config.launch
+    rosparam list
+ -->
